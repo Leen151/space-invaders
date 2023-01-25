@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Space invaders</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="index.js"></script>
+
+</head>
+<body>
+<!--affiche le vaisseau-->
+<!--<img id="ship" src="images/player.png">-->
+
+
+<script type="text/javascript">
+    //externaliser dans index.js avec le sprite
+    // //on récupère l'élément "vaisseau" du html
+    // let ship = document.getElementById("ship");    //
+    // //permet de contrôler la position de l'élément par rapport à son ancêtre (document)
+    // //si on ne le met pas, il ne se positionne pas, car n'a pas d'élément de référence
+    // ship.style.position = "absolute";
+    // //on le positionne à partir du coin en haut à gauche
+    // ship.style.left = "100px";
+    // ship.style.top = "100px";
+
+    //on appelle le constructeur du sprite pour créer le vaisseau
+    //document.body.clientWidth : largeur de la fenêtre
+    let ship = new Sprite("images/player.png", 740, 600);
+    //ship.display = "none"; //le vaisseau sera caché
+
+    let alien1 = new Sprite("images/enemy1.png", 200, 50);
+    let alien2 = new Sprite("images/enemy1.png", 400, 50);
+    let alien3 = new Sprite("images/enemy1.png", 600, 50);
+    let alien4 = new Sprite("images/enemy1.png", 200, 200);
+    let alien5 = new Sprite("images/enemy1.png", 450, 200);
+    
+    let missile = new Sprite("images/missile.png", 0,0);
+    missile.display = "none";
+
+    window.addEventListener("keydown", function (event){
+        //console.log(event.code);
+        //permet de connaitre les codes des touches clavier
+
+        //en appuyant sur la flèche droite, le "left" du vaisseau est augmenté de 10
+        if(event.code == "ArrowRight") {
+            ship.left = ship.left + 10;
+        }
+        else if (event.code == "ArrowLeft"){
+            ship.left = ship.left - 10;
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: url("images/space.png");
+    background-size: cover;
+    overflow: hidden;  /* pas de barre de scroll même si il y a du contenu qui dépasse*/
+
+}
